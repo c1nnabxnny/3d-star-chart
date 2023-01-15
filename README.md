@@ -32,3 +32,11 @@ This is where you can add all your project depencies. I already can't remember w
 # Part 2: Sorting the data
 
 Now that we have the data, we need to sort it so we don't break our computers. The most efficient way to do this, to my current knowledge, is to sort the database into an r-tree or a k-d tree in order of distance from the origin point (0, 0, 0). then, sort the sorted tree into buckets. then, set a script so that the engine only renders the stars that are in the same bucket as the user location. this way the computer doesn't try to render the entire large dataset at once, which would immediately overwhelm and crash the machine, and instead it only renders the part we currently need to see, which is a much more manageable dataset to work with. from there, we can probably further optimize rendering (and we also probably should), but I will deal with that part once I get there.
+
+1. passdatafromjs.cpp
+
+This script allows data to be passed from a javascript file to a C++ file. We can use this on coordinates.js to re-compile the data so that we can use it to build our sorted backend structure in C++. C++ is both better for managing large data structures than Javascript, and is also the language used in Unreal engine, which is where I plan on implementing this environment.
+
+To import an exported module from a js file to a c++ file, you can use a Javascript engine such as V8, SpiderMonkey, or ChakraCore. These engines allow you to execute js code in a c++ environment and provide an API to access the exported modules. This script uses the V8 engine.
+
+I think this code is a bit messy atm because I have the javascript file name hardcoded in. If I do go back and make edits, one thing I would like to change is passing in the js file name instead, so that it's easier to manage maintenance and scalability of the project. It's also just cleaner code. But there are limits to what my brain can manage to do in one coding session, and for now, as long as it works it is good enough. lol.
