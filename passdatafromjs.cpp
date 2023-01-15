@@ -1,14 +1,16 @@
+/*
+This script re-compiles a module exported from a JavaScript file into a module for C++.
+Made by c1nnabxnny
+*/
+
 #include <v8.h>
 #include <fstream>
 #include <iostream>
-
-//help me :(
 
 using namespace v8;
 
 int main() {
     // create a new V8 instance
-    //Platform* platform = platform::CreateDefaultPlatform();
     Platform* v8::platform::CreateDefaultPlatform(int thread_pool_size = 0);
     V8::InitializePlatform(platform);
     V8::Initialize();
@@ -60,5 +62,5 @@ int main() {
 
         // Extract the exported module
         Local<Object> global = context->Global();
-        Local<Value> exported_module = global;
+        Local<Value> coordinates_cpp = global;
     }

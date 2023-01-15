@@ -36,5 +36,5 @@ To import an exported module from a js file to a c++ file, you can use a Javascr
 
 I think this code is a bit messy atm because I have the javascript file name hardcoded in. If I do go back and make edits, one thing I would like to change is passing in the js file name instead, so that it's easier to manage maintenance and scalability of the project. It's also just cleaner code. But there are limits to what my brain can manage to do in one coding session, and for now, as long as it works it is good enough. lol.
 
-You may need to update your include paths to get this to work, at least I did. On my linux system, the correct path I needed to add was /usr/<put the rest in here lol>
+You may need to update your include paths to get this to work, at least I did.
 
