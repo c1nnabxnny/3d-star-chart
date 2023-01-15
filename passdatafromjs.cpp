@@ -8,7 +8,8 @@ using namespace v8;
 
 int main() {
     // create a new V8 instance
-    Platform* platform = platform::CreateDefaultPlatform();
+    //Platform* platform = platform::CreateDefaultPlatform();
+    Platform* v8::platform::CreateDefaultPlatform(int thread_pool_size = 0);
     V8::InitializePlatform(platform);
     V8::Initialize();
 
