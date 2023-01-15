@@ -2,12 +2,11 @@
 #include <fstream>
 #include <iostream>
 
+
 using namespace v8;
 
 int main() {
     // create a new V8 instance
-    V8::InitializeICUDefaultLocation("");
-    V8::InitializeExternalStartupData("");
     Platform* platform = platform::CreateDefaultPlatform();
     V8::InitializePlatform(platform);
     V8::Initialize();
@@ -59,4 +58,5 @@ int main() {
 
         // Extract the exported module
         Local<Object> global = context->Global();
-        Local<Value> exported_module = global
+        Local<Value> exported_module = global;
+    }
